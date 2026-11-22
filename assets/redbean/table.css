@@ -1,0 +1,966 @@
+.table-page .motif--umbrella { opacity: 0.12; }
+.table-page .motif-hairpin { opacity: 0.16; }
+.table-page .branch--night { opacity: 0.10; }
+
+.story-slide {
+  padding: 0;
+  align-items: stretch;
+  justify-content: center;
+}
+
+.story-grid {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.68fr) minmax(0, 1.9fr);
+  gap: clamp(26px, 4.4vw, 76px);
+  align-items: center;
+  width: 100%;
+  max-width: 1500px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 clamp(24px, 5vw, 82px);
+}
+
+.story-copy {
+  position: relative;
+  z-index: 2;
+  max-width: 430px;
+  color: #efe3cf;
+}
+
+.story-kicker {
+  margin: 0 0 14px;
+  font-family: var(--sans);
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  color: rgba(231, 219, 199, 0.42);
+}
+
+.story-title {
+  margin: 0;
+  font-family: var(--serif);
+  font-size: clamp(28px, 2.8vw, 42px);
+  line-height: 1.22;
+  letter-spacing: 0.04em;
+  color: #f3e7d3;
+  text-wrap: balance;
+}
+
+.story-sub {
+  margin: 18px 0 0;
+  font-family: var(--sans);
+  font-size: clamp(12px, 1.05vw, 15px);
+  line-height: 1.95;
+  letter-spacing: 0.05em;
+  color: rgba(231, 219, 199, 0.64);
+  white-space: pre-line;
+}
+
+.story-sub--long {
+  font-size: 11.5px;
+  line-height: 1.85;
+  color: rgba(231, 219, 199, 0.56);
+}
+
+.story-apple {
+  display: block;
+  width: clamp(88px, 8vw, 130px);
+  height: auto;
+  margin-top: 22px;
+  padding: 5px;
+  background: #f7efe1;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35);
+  transform: rotate(-4deg);
+}
+
+.story-gallery {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(10px, 1.5vw, 24px);
+  width: 100%;
+  min-width: 0;
+}
+
+.story-photo {
+  position: relative;
+  flex: 0 1 auto;
+  width: min(100%, calc(70vh * var(--ar, 0.75)));
+  max-height: 70vh;
+  aspect-ratio: var(--ar, 0.75);
+  min-width: 0;
+  padding: 8px;
+  overflow: hidden;
+  background: #f5f0e6;
+  border-radius: 2px;
+  box-shadow:
+    0 30px 80px rgba(0, 0, 0, 0.52),
+    0 0 0 1px rgba(255, 248, 232, 0.10);
+}
+
+.story-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 1px;
+  background: #f5f0e6;
+}
+
+.story-gallery--one .story-photo {
+  width: min(100%, calc(70vh * var(--ar, 0.75)));
+  max-width: 460px;
+}
+
+.story-gallery--two .story-photo {
+  width: min(48%, calc(70vh * var(--ar, 0.75)));
+  max-width: 48%;
+}
+
+.story-gallery--two .story-photo:nth-child(2) {
+  transform: translateY(16px) rotate(1.1deg);
+}
+
+.story-gallery--three .story-photo {
+  width: min(32%, calc(70vh * var(--ar, 0.75)));
+  max-width: 32%;
+}
+
+.story-gallery--three .story-photo:nth-child(2) {
+  transform: translateY(-14px);
+}
+
+.story-gallery--three .story-photo:nth-child(3) {
+  transform: translateY(12px) rotate(-1deg);
+}
+
+/* ---- slide 14: 三脚架上的相机 · 长胶卷三排折叠逐格显影 ---- */
+
+.story-slide--film {
+  overflow: hidden;
+}
+
+.story-copy--film {
+  position: absolute;
+  left: 3.4vw;
+  top: 3vh;
+  z-index: 5;
+  max-width: 26vw;
+  text-align: left;
+}
+
+.story-copy--film .story-kicker {
+  margin-bottom: 10px;
+}
+
+.story-copy--film .story-title {
+  font-size: clamp(22px, 2vw, 31px);
+}
+
+.story-copy--film .story-sub {
+  margin-top: 12px;
+}
+
+/* 场景 */
+.film-scene {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  perspective: 1500px;
+  perspective-origin: 50% 44%;
+  background:
+    radial-gradient(115% 95% at 42% 34%, #45321f 0%, #2a1d11 45%, #170f08 76%, #0c0704 100%);
+  --sceneW: 1360px;
+  --sceneH: 662px;
+  --camLeft: calc(var(--sceneW) * 0.115);
+  --camW: min(88px, calc(var(--sceneW) * 0.2));
+  --camH: calc(var(--camW) * 0.62);
+  --camTop: calc(var(--sceneH) * 0.21);
+  --standH: min(calc(var(--sceneH) * 0.7), calc(var(--camW) * 5.4));
+  --headH: calc(var(--camW) * 0.17);
+  --colH: calc(var(--camW) * 0.3);
+  --legLen: calc((var(--standH) - var(--headH) * 0.7 - var(--colH)) / 0.9537);
+  --groundY: calc(var(--camTop) + var(--camH) - 2px + var(--standH));
+  --gateY: calc(var(--camTop) + var(--camH) * 0.46);
+}
+
+.scene-glow {
+  position: absolute;
+  left: calc(var(--camLeft) + var(--camW) * 0.5);
+  top: calc(var(--camTop) + var(--camH) * 0.4);
+  width: 52vmin;
+  height: 52vmin;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(circle, rgba(255, 176, 92, 0.18), rgba(255, 150, 60, 0.05) 46%, transparent 70%);
+  filter: blur(12px);
+  pointer-events: none;
+  animation: sceneBreath 7.5s ease-in-out infinite;
+}
+
+@keyframes sceneBreath {
+  0%, 100% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+  50% { opacity: 0.62; transform: translate(-50%, -50%) scale(1.06); }
+}
+
+.scene-floor {
+  position: absolute;
+  left: calc(var(--camLeft) + var(--camW) * 0.5);
+  top: var(--groundY);
+  width: calc(var(--camW) * 1.9);
+  height: 28px;
+  transform: translate(-50%, -30%);
+  background: radial-gradient(50% 60% at 50% 30%, rgba(0, 0, 0, 0.55), transparent 72%);
+  filter: blur(7px);
+  pointer-events: none;
+}
+
+.camera-rig {
+  position: absolute;
+  left: var(--camLeft);
+  top: var(--camTop);
+  width: var(--camW);
+  height: calc(var(--groundY) - var(--camTop));
+  transform-origin: 50% 10%;
+  transform-style: preserve-3d;
+  will-change: transform;
+  z-index: 3;
+}
+
+.retro-camera {
+  position: absolute;
+  left: -4px;
+  top: calc(var(--camH) * -0.28);
+  width: 100%;
+  height: calc(var(--camH) * 1.28);
+  z-index: 2;
+  transform: rotateY(30deg) rotateX(6deg);
+  transform-origin: 50% 100%;
+  transform-style: preserve-3d;
+  filter: drop-shadow(0 12px 14px rgba(0, 0, 0, 0.55)) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.45));
+}
+
+/* 棚拍柔光：左上主光 + 底部暖反光 + 右侧轮廓光 */
+.retro-camera::after {
+  content: "";
+  position: absolute;
+  inset: -6px;
+  border-radius: 12px;
+  background:
+    linear-gradient(115deg, rgba(255, 255, 255, 0.16) 0%, rgba(255, 255, 255, 0.04) 32%, transparent 55%),
+    linear-gradient(0deg, rgba(255, 176, 110, 0.1) 0%, transparent 24%),
+    linear-gradient(90deg, transparent 80%, rgba(255, 220, 170, 0.12) 100%);
+  mix-blend-mode: screen;
+  pointer-events: none;
+  z-index: 9;
+}
+
+/* 复古单反：3/4 侧前视角，皮革机身 + 机械拨盘（镜头朝前左 30°） */
+.dslr-side {
+  position: absolute;
+  left: 8px;
+  top: 17px;
+  width: 18px;
+  bottom: 3px;
+  z-index: 2;
+  border-radius: 4px 0 0 5px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.05), transparent 30%),
+    linear-gradient(180deg, #232428 0%, #17181c 45%, #0e0f12 100%);
+  box-shadow:
+    inset -2px 0 3px rgba(0, 0, 0, 0.55),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.dslr-lug {
+  position: absolute;
+  left: 3px;
+  top: 24%;
+  width: 7px;
+  height: 5px;
+  border-radius: 999px;
+  border: 1px solid #a9abb2;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.5),
+    0 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+.dslr-body {
+  position: absolute;
+  left: 24px;
+  top: 14px;
+  right: 2px;
+  bottom: 0;
+  z-index: 3;
+  border-radius: 3px 7px 6px 6px;
+  background:
+    repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.035) 0 1px, rgba(0, 0, 0, 0.07) 1px 2px),
+    linear-gradient(115deg, rgba(255, 255, 255, 0.09) 0%, transparent 36%),
+    linear-gradient(180deg, #38393e 0%, #2a2b30 32%, #202126 68%, #141519 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    inset -1px 0 2px rgba(255, 255, 255, 0.05),
+    inset 0 -2px 4px rgba(0, 0, 0, 0.75),
+    0 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+.dslr-grip {
+  position: absolute;
+  right: 3px;
+  top: 16px;
+  width: 13px;
+  bottom: 3px;
+  border-radius: 5px;
+  background:
+    repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.03) 0 1px, rgba(0, 0, 0, 0.09) 1px 2px),
+    linear-gradient(90deg, #1f2025 0%, #2e2f35 45%, #17181c 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.14),
+    inset 2px 0 3px rgba(255, 255, 255, 0.05),
+    0 2px 4px rgba(0, 0, 0, 0.45);
+}
+
+.dslr-sync {
+  position: absolute;
+  left: 32px;
+  top: 24px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 50%, #101114 0 40%, #c9cbd0 44%, #74767c 70%, #2c2d31 100%);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
+}
+
+.dslr-timer {
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 40% 35%, #ff9d8a, #d43a24 60%, #6e1408 100%);
+  box-shadow: 0 0 2px rgba(255, 90, 60, 0.7);
+}
+
+.dslr-prism {
+  position: absolute;
+  left: 38px;
+  top: 0;
+  width: 28px;
+  height: 17px;
+  z-index: 5;
+  clip-path: polygon(14% 0, 86% 0, 100% 100%, 0 100%);
+  background:
+    linear-gradient(115deg, rgba(255, 255, 255, 0.14) 0%, transparent 34%),
+    linear-gradient(180deg, #3b3c42 0%, #24252a 40%, #141519 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.dslr-hotshoe {
+  position: absolute;
+  left: 4px;
+  top: 1px;
+  width: 12px;
+  height: 5px;
+  border-radius: 1px;
+  background: linear-gradient(180deg, #e6e7eb 0%, #a4a6ac 55%, #5c5e64 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.7),
+    0 1px 1px rgba(0, 0, 0, 0.4);
+}
+
+.dslr-hotshoe::after {
+  content: "";
+  position: absolute;
+  left: 2px;
+  right: 2px;
+  top: 55%;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.dslr-brand {
+  position: absolute;
+  left: 50%;
+  top: 55%;
+  transform: translateX(-50%);
+  font: 700 4.5px / 1 "Helvetica Neue", Arial, sans-serif;
+  letter-spacing: 0.14em;
+  color: rgba(228, 228, 232, 0.85);
+}
+
+.dslr-top {
+  position: absolute;
+  left: 23px;
+  right: 1px;
+  top: 13px;
+  height: 12px;
+  z-index: 6;
+  border-radius: 3px 5px 1px 1px;
+  background: linear-gradient(180deg, #d7d9de 0%, #a9abb1 34%, #7d7f86 62%, #56585e 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.7),
+    inset 0 -1px 2px rgba(0, 0, 0, 0.45);
+}
+
+.dslr-dial {
+  position: absolute;
+  border-radius: 50%;
+  background:
+    repeating-conic-gradient(from 6deg, rgba(40, 42, 48, 0.5) 0deg 5deg, transparent 5deg 36deg),
+    radial-gradient(circle at 36% 30%, #f2f3f6 0%, #c3c5cb 36%, #7e8087 68%, #3e4046 100%);
+  box-shadow:
+    inset 0 1px 1px rgba(255, 255, 255, 0.65),
+    0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.dslr-dial::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 42%;
+  height: 42%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: radial-gradient(circle at 36% 30%, #dfe1e5 0%, #86888e 55%, #3a3c42 100%);
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3);
+}
+
+.dslr-dial--shutter {
+  right: 3px;
+  top: -6px;
+  width: 15px;
+  height: 15px;
+}
+
+.dslr-dial--mode {
+  left: 4px;
+  top: -4px;
+  width: 11px;
+  height: 11px;
+}
+
+.dslr-btn {
+  position: absolute;
+  left: 31px;
+  top: -5px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 36% 30%, #eceef1 0%, #a8abb1 42%, #585a60 80%, #2e3036 100%);
+  box-shadow:
+    inset 0 1px 1px rgba(255, 255, 255, 0.6),
+    0 1px 2px rgba(0, 0, 0, 0.55);
+}
+
+.film-counter {
+  position: absolute;
+  left: 17px;
+  top: 2px;
+  width: 13px;
+  height: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 2px;
+  background: linear-gradient(180deg, #12301f 0%, #0b1f14 60%, #07130d 100%);
+  box-shadow:
+    inset 0 1px 2px rgba(0, 0, 0, 0.9),
+    0 0 0 1px rgba(20, 22, 26, 0.8);
+}
+
+.counter-num {
+  font: 700 5.5px / 1 "Courier New", monospace;
+  color: #cdf3c0;
+  text-shadow: 0 0 4px rgba(150, 240, 120, 0.55);
+}
+
+/* 复古单反镜头：锥形镜筒朝前左 + 银圈卡口 + 齿纹对焦环 + 镜片反光 */
+.dslr-lens {
+  position: absolute;
+  left: -10px;
+  top: 23px;
+  width: 46px;
+  height: 27px;
+  z-index: 4;
+}
+
+.lens-tube {
+  position: absolute;
+  left: 8px;
+  right: 0;
+  top: 5px;
+  bottom: 5px;
+  clip-path: polygon(0 0, 100% 18%, 100% 82%, 0 100%);
+  background:
+    repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.35) 0 1px, rgba(255, 255, 255, 0.05) 1px 2px, transparent 2px 3px),
+    linear-gradient(180deg, #4d4e54 0%, #2a2b30 30%, #101114 62%, #26272c 85%, #0b0c0e 100%);
+}
+
+.lens-knurl {
+  position: absolute;
+  left: 15px;
+  top: 4px;
+  width: 9px;
+  bottom: 4px;
+  border-radius: 2px;
+  background:
+    repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.5) 0 1px, rgba(255, 255, 255, 0.12) 1px 2px, rgba(0, 0, 0, 0.18) 2px 3px),
+    linear-gradient(180deg, #67686e 0%, #3b3c42 45%, #232428 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.28);
+}
+
+.lens-base {
+  position: absolute;
+  right: -2px;
+  top: 3px;
+  width: 10px;
+  bottom: 3px;
+  border-radius: 2px 6px 6px 2px;
+  background: linear-gradient(90deg, #55565c 0%, #cfd0d5 32%, #8e8f95 58%, #3a3b40 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45);
+}
+
+.lens-rim {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 19px;
+  height: 13.5px;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  background: radial-gradient(closest-side, transparent 56%, #eceef1 60%, #b9bcc2 74%, #6c6e74 86%, #2c2d31 96%, #131418 100%);
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.55);
+}
+
+.lens-glass {
+  position: absolute;
+  left: 3.6px;
+  top: 50%;
+  width: 11.8px;
+  height: 8.2px;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  background: radial-gradient(circle at 34% 28%, rgba(255, 255, 255, 0.8) 0%, rgba(160, 200, 235, 0.32) 24%, rgba(26, 48, 74, 0.92) 58%, #04080f 100%);
+  box-shadow:
+    inset 0 0 2px rgba(0, 0, 0, 0.9),
+    inset 0 -1px 1px rgba(255, 255, 255, 0.12);
+}
+
+.lens-glass::after {
+  content: "";
+  position: absolute;
+  left: 22%;
+  top: 14%;
+  width: 26%;
+  height: 20%;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.85);
+  filter: blur(0.4px);
+}
+
+/* 机身右侧的片门：胶卷从这里吐出来 */
+.film-gate {
+  position: absolute;
+  right: -6px;
+  top: 40px;
+  z-index: 7;
+  width: 9px;
+  height: 10px;
+  border-radius: 2px;
+  background: linear-gradient(180deg, #050609 0%, #14151a 45%, #030405 100%);
+  box-shadow:
+    0 0 0 1.5px rgba(120, 122, 128, 0.32),
+    0 0 0 2.5px rgba(14, 15, 18, 0.85),
+    inset 0 2px 3px rgba(0, 0, 0, 0.95);
+}
+.camera-stand {
+  position: absolute;
+  left: 50%;
+  top: calc(var(--camH) - 2px);
+  width: 0;
+  height: var(--standH);
+  z-index: 1;
+}
+
+.stand-head {
+  position: absolute;
+  left: 0;
+  top: calc(var(--headH) * -0.4);
+  width: calc(var(--camW) * 0.55);
+  height: var(--headH);
+  transform: translateX(-50%);
+  z-index: 3;
+}
+
+.head-plate {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 66%;
+  height: 22%;
+  transform: translateX(-50%);
+  border-radius: 2px;
+  background: linear-gradient(180deg, #9a9ba2 0%, #6b6c73 55%, #42434a 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.55),
+    0 1px 2px rgba(0, 0, 0, 0.45);
+}
+
+.head-body {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 70%;
+  clip-path: polygon(9% 0, 91% 0, 100% 100%, 0 100%);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.1), transparent 40%),
+    linear-gradient(180deg, #43444a 0%, #24252a 58%, #141519 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18);
+}
+
+.head-knob {
+  position: absolute;
+  left: -8%;
+  bottom: 2%;
+  width: 24%;
+  height: 50%;
+  border-radius: 50%;
+  background: radial-gradient(circle at 34% 28%, #c2c5cb 0%, #7d7f86 42%, #45464d 78%, #26272c 100%);
+  box-shadow:
+    inset 0 1px 1px rgba(255, 255, 255, 0.55),
+    0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.head-arm {
+  position: absolute;
+  right: -80%;
+  bottom: 4%;
+  width: 80%;
+  height: 13%;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #686a71 0%, #3a3b41 45%, #1c1d21 100%);
+  transform: rotate(-16deg);
+  transform-origin: 0 50%;
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+.stand-column {
+  position: absolute;
+  left: 0;
+  top: calc(var(--headH) * 0.6);
+  width: calc(var(--camW) * 0.075);
+  height: var(--colH);
+  transform: translateX(-50%);
+  border-radius: 3px;
+  background: linear-gradient(90deg, #17181b 0%, #46484f 34%, #6a6c73 46%, #33353a 62%, #0f1013 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.22),
+    inset 0 -1px 2px rgba(0, 0, 0, 0.6);
+  z-index: 2;
+}
+
+.column-lock {
+  position: absolute;
+  left: 50%;
+  top: 6%;
+  width: 320%;
+  height: 24%;
+  transform: translateX(-50%);
+  border-radius: 999px;
+  background: linear-gradient(180deg, #7b7d84 0%, #4a4c52 55%, #26272c 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.4),
+    0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.column-lock::after {
+  content: "";
+  position: absolute;
+  left: 9%;
+  top: 24%;
+  width: 26%;
+  height: 52%;
+  border-radius: 2px;
+  background: linear-gradient(180deg, #e07a1e 0%, #a34e0c 65%, #5f2c06 100%);
+  box-shadow: inset 0 1px 0 rgba(255, 190, 130, 0.45);
+}
+
+.stand-legs {
+  position: absolute;
+  left: 0;
+  top: calc(var(--headH) * 0.6 + var(--colH));
+  width: 0;
+  height: 0;
+}
+
+.leg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: calc(var(--camW) * 0.08);
+  height: var(--legLen);
+  margin-left: calc(var(--camW) * -0.04);
+  transform-origin: 50% 0;
+  border-radius: 999px;
+  background:
+    repeating-linear-gradient(48deg, rgba(255, 255, 255, 0.07) 0 2px, rgba(0, 0, 0, 0.06) 2px 4px),
+    linear-gradient(90deg, #2f1a06 0%, #a35414 22%, #e8842c 40%, #ffb25c 50%, #d9771f 62%, #7d3d0c 84%, #241205 100%);
+  box-shadow:
+    0 0 0 0.5px rgba(0, 0, 0, 0.5),
+    0 1px 3px rgba(0, 0, 0, 0.55);
+}
+
+.leg-clamp {
+  position: absolute;
+  left: -20%;
+  top: 46.5%;
+  width: 140%;
+  height: 6%;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #4a4b51 0%, #1a1b1f 45%, #070809 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.28),
+    0 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+.leg-foot {
+  position: absolute;
+  left: 50%;
+  bottom: -1.5%;
+  width: 240%;
+  height: 5%;
+  transform: translateX(-50%);
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  background: linear-gradient(180deg, #2a2b30 0%, #101115 55%, #050608 100%);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.55);
+}
+
+.leg--l { transform: rotate(17.5deg); }
+.leg--r { transform: rotate(-17.5deg); }
+.leg--c { height: calc(var(--legLen) * 0.9537); transform: rotate(1deg); opacity: 0.85; }
+
+/* 长胶卷：三排折叠，逐格显影 */
+/* 长胶卷：丝带式盘旋排布（大小、角度各异，向右下延伸出画） */
+/* 纵向垂挂：一条挂线，几条长短/宽窄/角度不同的胶片条 */
+.film-ribbon {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+  transform-style: preserve-3d;
+  transform: rotateX(8deg) rotateZ(-0.6deg);
+  transform-origin: 50% 55%;
+}
+
+.ribbon-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.ribbon-frames {
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+}
+
+
+.frame-slot {
+  position: absolute;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+  border-radius: 2px;
+  will-change: transform;
+}
+
+/* 暗角：让截图融进胶片带 */
+.frame-slot::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 2px;
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, rgba(88, 62, 34, 0.38) 0%, rgba(68, 47, 25, 0.44) 100%),
+    linear-gradient(180deg, rgba(36, 24, 12, 0.3) 0%, transparent 32%, transparent 68%, rgba(22, 14, 7, 0.4) 100%),
+    radial-gradient(120% 120% at 50% 46%, transparent 54%, rgba(20, 12, 5, 0.55) 100%);
+  mix-blend-mode: multiply;
+}
+
+.frame {
+  position: relative;
+  box-sizing: border-box;
+  display: block;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  padding: 3px 3px 7px;
+  border-radius: 2px;
+  background: linear-gradient(180deg, #e4d8bd, #cdbc9a);
+  box-shadow:
+    0 2px 5px rgba(0, 0, 0, 0.5),
+    inset 0 0 0 1px rgba(255, 248, 232, 0.3);
+}
+
+.frame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: blur(9px) grayscale(1) brightness(0.45) sepia(0.35);
+  opacity: 0.5;
+  box-shadow: 0 0 0 1px rgba(60, 44, 28, 0.4);
+}
+
+.frame::after {
+  content: attr(data-n);
+  position: absolute;
+  right: 3px;
+  bottom: 0;
+  font: 600 clamp(5px, calc(var(--frameW) * 0.045), 8px) / 1.5 "Courier New", monospace;
+  letter-spacing: 0.05em;
+  color: rgba(74, 58, 38, 0.55);
+}
+
+.frame-slot.is-on .frame img {
+  animation: filmDev 1.15s ease 0.08s both;
+}
+
+@keyframes filmDev {
+  from { filter: blur(9px) grayscale(1) brightness(0.45) sepia(0.35); opacity: 0.5; }
+  to { filter: blur(0) sepia(0.34) saturate(0.78) brightness(0.9) contrast(0.96); opacity: 1; }
+}
+.scene-caption {
+  position: absolute;
+  right: 3vw;
+  bottom: 2.6vh;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--sans);
+  font-size: 11px;
+  letter-spacing: 0.24em;
+  color: rgba(233, 212, 172, 0.6);
+}
+
+.scene-caption i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #c9503a;
+  box-shadow: 0 0 7px rgba(201, 80, 58, 0.9);
+  animation: recBlink 1.7s ease-in-out infinite;
+}
+
+@keyframes recBlink { 50% { opacity: 0.25; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .scene-glow,
+  .scene-caption i { animation: none; }
+  .frame-slot.is-on .frame img { animation-duration: 0.9s; animation-delay: 0.05s; }
+  .camera-rig { transform: none !important; }
+}
+@media (max-width: 800px) {
+  .story-grid {
+    display: block;
+    overflow-y: auto;
+    padding: 6px 18px 0;
+  }
+
+  .story-copy {
+    max-width: none;
+  }
+
+  .story-kicker {
+    margin-bottom: 8px;
+    font-size: 8px;
+  }
+
+  .story-title {
+    font-size: clamp(27px, 8.4vw, 40px);
+  }
+
+  .story-sub {
+    margin-top: 10px;
+    font-size: 11px;
+    line-height: 1.8;
+  }
+
+  .story-sub--long {
+    font-size: 9.5px;
+    line-height: 1.7;
+  }
+
+  .story-apple {
+    width: 76px;
+    margin-top: 10px;
+  }
+
+  .story-gallery {
+    margin-top: 14px;
+    gap: 8px;
+  }
+
+  .story-photo {
+    width: min(100%, calc(42vh * var(--ar, 0.75)));
+    max-height: 42vh;
+    padding: 5px;
+  }
+
+  .story-gallery--one .story-photo {
+    width: min(100%, calc(42vh * var(--ar, 0.75)));
+    max-width: 100%;
+  }
+
+  .story-gallery--two .story-photo {
+    width: min(48%, calc(42vh * var(--ar, 0.75)));
+    max-width: 48%;
+  }
+
+  .story-gallery--three .story-photo {
+    width: min(32%, calc(42vh * var(--ar, 0.75)));
+    max-width: 32%;
+  }
+
+  .film-scene {
+    --camLeft: calc(var(--sceneW) * 0.29);
+    --camW: min(88px, calc(var(--sceneW) * 0.26), calc(var(--sceneH) * 0.26));
+    --camTop: calc(var(--sceneH) * 0.2);
+  }
+
+  .story-copy--film {
+    left: 4vw;
+    top: 2vh;
+    max-width: 44vw;
+  }
+
+  .story-copy--film .story-title {
+    font-size: clamp(17px, 5.4vw, 24px);
+  }
+
+  .story-copy--film .story-sub {
+    font-size: 10.5px;
+    line-height: 1.7;
+  }
+
+  .scene-caption {
+    right: 4vw;
+    bottom: 2vh;
+    font-size: 9.5px;
+    letter-spacing: 0.18em;
+  }
+
+  .story-gallery--two .story-photo:nth-child(2) {
+    transform: translateY(8px);
+  }
+}

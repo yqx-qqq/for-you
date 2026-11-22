@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#081214">
+  <title>红豆 · 相思 — I miss you</title>
+  <link rel="stylesheet" href="assets/redbean/css/style.css">
+  <link rel="stylesheet" href="assets/redbean/table.css">
+</head>
+<body class="locked">
+  <section class="landing" id="landing">
+    <div class="landing-paper" aria-hidden="true"></div>
+    <div class="landing-wash" aria-hidden="true"></div>
+    <div class="landing-branch" aria-hidden="true"></div>
+    <div class="landing-inner">
+      <div class="landing-top">
+        <span>CHAPTER 02 · 红豆</span>
+        <a class="rb-home" href="index.html">← 回到句子</a>
+      </div>
+
+      <button class="sentence" id="openMemory" aria-label="打开这一章">
+        <span class="sentence-en">I m<span class="i-bean">ı<svg class="i-bean-mark" viewBox="0 0 64 44" aria-hidden="true">
+          <defs>
+            <radialGradient id="beanFill" cx="33%" cy="26%" r="80%">
+              <stop offset="0" stop-color="#dd7863"/>
+              <stop offset=".3" stop-color="#b84035"/>
+              <stop offset=".66" stop-color="#8e2822"/>
+              <stop offset="1" stop-color="#5a1714"/>
+            </radialGradient>
+            <linearGradient id="beanCrease" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#6c1c18" stop-opacity="0"/>
+              <stop offset=".5" stop-color="#6c1c18" stop-opacity=".55"/>
+              <stop offset="1" stop-color="#6c1c18" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+          <path d="M32 3 C48 2 61 11 60 24 C59 35 47 41 34 39 C27 38 22 34 19 29 C16 24 12 22 7 20 C1 17 2 8 10 5 C17 2 24 4 32 3 Z" fill="url(#beanFill)"/>
+          <path d="M35 12 C43 14 47 21 44 28" fill="none" stroke="url(#beanCrease)" stroke-width="2.4" stroke-linecap="round"/>
+          <ellipse cx="22" cy="12" rx="7" ry="3.6" fill="rgba(255,236,214,.42)" transform="rotate(-24 22 12)"/>
+          <path d="M9 18 C13 16 17 15 21 15" fill="none" stroke="rgba(91,24,20,.35)" stroke-width="1.4" stroke-linecap="round"/>
+        </svg></span>ss you</span>
+        <span class="sentence-cn">红豆生南国，春来发几枝</span>
+        <span class="seal" aria-hidden="true">相思</span>
+      </button>
+
+      <div class="landing-bottom">
+        <span class="hint">tap to begin</span>
+        <span class="landing-credit">王维《相思》</span>
+      </div>
+    </div>
+  </section>
+
+  <main class="memory" id="memory" aria-hidden="true">
+    <div class="ink" aria-hidden="true"></div>
+    <div class="moon" aria-hidden="true"></div>
+    <img class="branch branch--night" src="assets/redbean/art/redbean-branch.svg" alt="" aria-hidden="true">
+    <div class="motif motif--umbrella" aria-hidden="true"></div>
+    <img class="motif-hairpin" src="assets/redbean/art/hairpin.svg" alt="" aria-hidden="true">
+    <canvas id="beans" aria-hidden="true"></canvas>
+    <div class="grain" aria-hidden="true"></div>
+
+    <header class="topbar">
+      <button class="ghost" id="backBtn" aria-label="回到句子">
+        <span class="ghost-arrow">←</span><span class="ghost-text">sentences</span>
+      </button>
+      <div class="chapter"><span class="chapter-bean" aria-hidden="true"></span>红豆 · 相思</div>
+      <button class="sound" id="soundBtn" aria-label="播放背景音乐" aria-pressed="false" title="BGM · 吉泰路107号">
+        <span class="bars" aria-hidden="true"><i></i><i></i><i></i></span>
+      </button>
+    </header>
+
+    <section class="stage" id="stage" aria-label="自动放映">
+      <div class="slides" id="slides">
+        <figure class="slide story-slide" data-index="0" data-duration="6000" data-climax="false">
+          <div class="story-grid">
+            <div class="story-copy">
+              <p class="story-kicker">01 / 2024·11</p>
+              <h2 class="story-title">不敢承认的思念</h2>
+              <p class="story-sub">伟大的暧昧期
+2024/11/07</p>
+            </div>
+            <div class="story-gallery story-gallery--two">
+              <figure class="story-photo" style="--ar:0.735"><img src="assets/redbean/table/photo-01.jpg" alt="聊天记录" decoding="async"></figure>
+              <figure class="story-photo" style="--ar:0.59"><img src="assets/redbean/table/photo-02.jpg" alt="聊天记录" decoding="async"></figure>
+            </div>
+          </div>
+        </figure>
+
+        <figure class="slide story-slide" data-index="1" data-duration="7000" data-climax="false">
+          <div class="story-grid">
+            <div class="story-copy">
+              <p class="story-kicker">02 / 告别</p>
+              <h2 class="story-title">我讨厌告别</h2>
+              <p class="story-sub">我会想你</p>
+            </div>
+            <div class="story-gallery story-gallery--one">
+              <figure class="story-photo" style="--ar:0.951"><img src="assets/redbean/table/photo-03.jpg" alt="聊天记录" decoding="async"></figure>
+            </div>
+          </div>
+        </figure>
+
+        <figure class="slide story-slide" data-index="2" data-duration="13000" data-climax="false">
+          <div class="story-grid">
+            <div class="story-copy">
+              <p class="story-kicker">03 / 晴天</p>
+              <h2 class="story-title">等一个艳阳天</h2>
+              <p class="story-sub story-sub--long">☀️ 本义：晴朗无云。“晏”是形声字，从“日”，“安”声，本义与天气相关，指天空晴朗无云。古籍中常以“天清日晏”或“天清也”来描述这种清朗景象。</p>
+              <img class="story-apple" src="assets/redbean/table/apple.jpg" alt="" aria-hidden="true" decoding="async">
+            </div>
+            <div class="story-gallery story-gallery--one">
+              <figure class="story-photo" style="--ar:0.56"><img src="assets/redbean/table/photo-04.jpg" alt="晴天" decoding="async"></figure>
+            </div>
+          </div>
+        </figure>
+
+        <figure class="slide story-slide" data-index="3" data-duration="7000" data-climax="false">
+          <div class="story-grid">
+            <div class="story-copy">
+              <p class="story-kicker">04 / 想说的话</p>
+              <h2 class="story-title">有好多好多的话要讲</h2>
+            </div>
+            <div class="story-gallery story-gallery--one">
+              <figure class="story-photo" style="--ar:0.472"><img src="assets/redbean/table/photo-05.jpg" alt="视频通话" decoding="async"></figure>
+            </div>
+          </div>
+        </figure>
+
+        <figure class="slide story-slide" data-index="4" data-duration="7000" data-climax="false">
+          <div class="story-grid">
+            <div class="story-copy">
+              <p class="story-kicker">05 / 成都</p>
+              <h2 class="story-title">筹划你第一次来成都</h2>
+            </div>
+            <div class="story-gallery story-gallery--one">
+              <figure class="story-photo" style="--ar:0.887"><img src="assets/redbean/table/photo-06.jpg" alt="聊天记录" decoding="async"></figure>
+            </div>
+          </div>
+        </figure>
+
+        <figure class="slide story-slide" data-index="5" data-duration="7000" data-climax="false">
+          <div class="story-grid">
+            <div class="story-copy">
+              <p class="story-kicker">06 / 心照不宣</p>
+              <h2 class="story-title">“心照不宣”</h2>
+            </div>
+            <div class="story-gallery story-gallery--one">
+              <figure class="story-photo" style="--ar:0.59"><img src="assets/redbean/table/photo-07.jpg" alt="聊天记录" decoding="async"></figure>
+            </div>
+          </div>
+        </figure>
+
+        <figure class="slide story-slide" data-index="6" data-duration="8000" data-climax="true">
+          <div class="story-grid">
+            <div class="story-copy">
+              <p class="story-kicker">07 / 最想你的时候</p>
+              <h2 class="story-title">我好想你！</h2>
+            </div>
+            <div class="story-gallery story-gallery--three">
+              <figure class="story-photo" style="--ar:1.056"><img src="assets/redbean/table/photo-08.jpg" alt="聊天记录" decoding="async"></figure>
+              <figure class="story-photo" style="--ar:1.092"><img src="assets/redbean/table/photo-09.jpg" alt="聊天记录" decoding="async"></figure>
+              <figure class="story-photo" style="--ar:0.462"><img src="assets/redbean/table/photo-10.jpg" alt="搜索记录" decoding="async"></figure>
+            </div>
+          </div>
+        </figure>
+
+        <figure class="slide story-slide" data-index="7" data-duration="7000" data-climax="true">
+          <div class="story-grid">
+            <div class="story-copy">
+              <p class="story-kicker">08 / 后来</p>
+              <h2 class="story-title">02/14</h2>
+              <p class="story-sub">马上就可以见到了那</p>
+            </div>
+            <div class="story-gallery story-gallery--one"><figure class="story-photo" style="--ar:0.606"><img src="assets/redbean/cards/new01.jpg" alt="聊天记录" decoding="async"></figure></div>
+          </div>
+        </figure>
+
+        <figure class="slide story-slide" data-index="8" data-duration="7000" data-climax="true">
+          <div class="story-grid">
+            <div class="story-copy">
+              <p class="story-kicker">09 / 后来</p>
+              <h2 class="story-title">02/20</h2>
+              <p class="story-sub">想抱着你睡觉</p>
+            </div>
+            <div class="story-gallery story-gallery--one"><figure class="story-photo" style="--ar:0.606"><img src="assets/redbean/cards/new02.jpg" alt="聊天记录" decoding="async"></figure></div>
+          </div>
+        </figure>
+
+        <figure class="slide story-slide" data-index="9" data-duration="7000" data-climax="true">
+          <div class="story-grid">
+            <div class="story-copy">
+              <p class="story-kicker">10 / 后来</p>
+              <h2 class="story-title">想你</h2>
+              <p class="story-sub">宝宝</p>
+            </div>
+            <div class="story-gallery story-gallery--one"><figure class="story-photo" style="--ar:0.606"><img src="assets/redbean/cards/new03.jpg" alt="聊天记录" decoding="async"></figure></div>
+          </div>
+        </figure>
+
+        <figure class="slide story-slide" data-index="10" data-duration="7000" data-climax="true">
+          <div class="story-grid">
+            <div class="story-copy">
+              <p class="story-kicker">11 / 后来</p>
+              <h2 class="story-title">03/22</h2>
+              <p class="story-sub">立刻传送到我面前</p>
+            </div>
+            <div class="story-gallery story-gallery--one"><figure class="story-photo" style="--ar:0.606"><img src="assets/redbean/cards/new04.jpg" alt="聊天记录" decoding="async"></figure></div>
+          </div>
+        </figure>
+
+        <figure class="slide story-slide" data-index="11" data-duration="7000" data-climax="true">
+          <div class="story-grid">
+            <div class="story-copy">
+              <p class="story-kicker">12 / 后来</p>
+              <h2 class="story-title">06/08</h2>
+              <p class="story-sub">刚下地铁</p>
+            </div>
+            <div class="story-gallery story-gallery--one"><figure class="story-photo" style="--ar:0.606"><img src="assets/redbean/cards/new05.jpg" alt="聊天记录" decoding="async"></figure></div>
+          </div>
+        </figure>
+
+        <figure class="slide story-slide" data-index="12" data-duration="7000" data-climax="true">
+          <div class="story-grid">
+            <div class="story-copy">
+              <p class="story-kicker">13 / 后来</p>
+              <h2 class="story-title">07/05</h2>
+              <p class="story-sub">想你了</p>
+            </div>
+            <div class="story-gallery story-gallery--one"><figure class="story-photo" style="--ar:0.606"><img src="assets/redbean/cards/new06.jpg" alt="聊天记录" decoding="async"></figure></div>
+          </div>
+        </figure>
+
+        <figure class="slide story-slide story-slide--film" data-index="13" data-duration="17000" data-climax="true">
+          <div class="story-copy story-copy--film">
+            <p class="story-kicker">14 / 搜索</p>
+            <h2 class="story-title">搜索 · 想你</h2>
+            <p class="story-sub">后来，在搜索框里找你</p>
+          </div>
+
+          <div class="film-scene" data-interval="520" data-max="18" aria-hidden="true">
+            <div class="scene-glow"></div>
+            <div class="scene-floor"></div>
+
+            <div class="camera-rig">
+              <div class="camera-stand">
+                <div class="stand-head">
+                  <div class="head-plate"></div>
+                  <div class="head-body"></div>
+                  <div class="head-knob"></div>
+                  <div class="head-arm"></div>
+                </div>
+                <div class="stand-column">
+                  <div class="column-lock"></div>
+                </div>
+                <div class="stand-legs">
+                  <div class="leg leg--c">
+                    <i class="leg-clamp"></i>
+                    <b class="leg-foot"></b>
+                  </div>
+                  <div class="leg leg--l">
+                    <i class="leg-clamp"></i>
+                    <b class="leg-foot"></b>
+                  </div>
+                  <div class="leg leg--r">
+                    <i class="leg-clamp"></i>
+                    <b class="leg-foot"></b>
+                  </div>
+                </div>
+              </div>
+
+              <div class="retro-camera">
+                <div class="dslr-lens">
+                  <i class="lens-tube"></i>
+                  <i class="lens-knurl"></i>
+                  <i class="lens-base"></i>
+                  <i class="lens-rim"></i>
+                  <i class="lens-glass"></i>
+                </div>
+                <div class="dslr-side">
+                  <i class="dslr-lug"></i>
+                </div>
+                <div class="dslr-body">
+                  <i class="dslr-grip"></i>
+                  <i class="dslr-sync"></i>
+                  <i class="dslr-timer"></i>
+                </div>
+                <div class="dslr-prism">
+                  <i class="dslr-hotshoe"></i>
+                  <i class="dslr-brand">RICOH</i>
+                </div>
+                <div class="dslr-top">
+                  <i class="dslr-dial dslr-dial--mode"></i>
+                  <span class="film-counter"><span class="counter-num">0</span></span>
+                  <i class="dslr-btn"></i>
+                  <i class="dslr-dial dslr-dial--shutter"></i>
+                </div>
+                <i class="film-gate"></i>
+              </div>
+            </div>
+
+            <div class="film-ribbon">
+              <svg class="ribbon-svg" aria-hidden="true"></svg>
+              <div class="ribbon-frames"></div>
+            </div>
+
+            <p class="scene-caption"><i></i>胶卷自动放映中</p>
+          </div>
+
+          <script type="application/json" id="film-photos">["assets/redbean/table/frame-01.jpg","assets/redbean/table/frame-02.jpg","assets/redbean/table/frame-03.jpg","assets/redbean/table/frame-04.jpg","assets/redbean/table/frame-05.jpg","assets/redbean/table/frame-06.jpg","assets/redbean/table/frame-07.jpg","assets/redbean/table/frame-08.jpg","assets/redbean/table/frame-09.jpg","assets/redbean/table/frame-10.jpg","assets/redbean/table/frame-11.jpg","assets/redbean/table/frame-12.jpg","assets/redbean/table/frame-13.jpg","assets/redbean/table/frame-14.jpg","assets/redbean/table/frame-15.jpg","assets/redbean/table/frame-16.jpg","assets/redbean/table/frame-17.jpg","assets/redbean/table/frame-18.jpg"]</script>
+        </figure>
+
+      </div>
+
+      <div class="controls" id="controls">
+        <div class="bean-dots" id="dots" aria-label="放映进度"></div>
+        <div class="control-row">
+          <button class="ctrl" id="prevBtn" aria-label="上一张">‹</button>
+          <button class="ctrl ctrl--play" id="playBtn" aria-label="暂停自动放映"><span id="playIcon">❚❚</span></button>
+          <button class="ctrl" id="nextBtn" aria-label="下一张">›</button>
+          <div class="control-meta"><span id="counter">01 / 14</span><span id="autoLabel">AUTO</span></div>
+        </div>
+        <div class="timebar" aria-hidden="true"><span id="timeFill"></span></div>
+      </div>
+    </section>
+
+    <section class="outro" id="outro" aria-hidden="true" hidden>
+      <img class="branch branch--outro" src="assets/redbean/art/redbean-branch.svg" alt="" aria-hidden="true">
+      <span class="seal seal--large" aria-hidden="true">相思</span>
+      <p class="outro-poem">红豆生南国，春来发几枝。<br>愿君多采撷，此物最相思。</p>
+      <p class="outro-cn">一千次的思念换一次相见。</p>
+      <div class="outro-actions">
+        <button class="outline-btn" id="replayBtn">再看一遍</button>
+        <button class="outline-btn outline-btn--dim" id="outroBack">回到句子</button>
+      </div>
+      <p class="credit">诗 · 王维《相思》　画面元素 · 中国唱诗班《相思》</p>
+      <p class="credit">BGM · 吉泰路107号</p>
+    </section>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <audio id="bgm" loop preload="metadata">
+      <source src="assets/redbean/audio/chapter_bgm.m4a" type="audio/mp4">
+      <source src="assets/redbean/audio/chapter_bgm.mp3" type="audio/mpeg">
+    </audio>
+  </main>
+
+  <script src="assets/redbean/js/main.js"></script>
+</body>
+</html>

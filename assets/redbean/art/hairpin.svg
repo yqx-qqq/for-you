@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 360" width="140" height="360">
+  <defs>
+    <linearGradient id="metal" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#5b4a3a"/>
+      <stop offset=".28" stop-color="#b9a486"/>
+      <stop offset=".55" stop-color="#f2e4ca"/>
+      <stop offset=".78" stop-color="#9e876b"/>
+      <stop offset="1" stop-color="#554334"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e7c78e"/>
+      <stop offset=".55" stop-color="#b8894e"/>
+      <stop offset="1" stop-color="#7d5630"/>
+    </linearGradient>
+    <radialGradient id="bean" cx=".35" cy=".3" r=".8">
+      <stop offset="0" stop-color="#d56958"/>
+      <stop offset=".55" stop-color="#a2352e"/>
+      <stop offset="1" stop-color="#641b19"/>
+    </radialGradient>
+  </defs>
+
+  <!-- long pin -->
+  <path d="M78 342 C74 286 72 224 68 158 C66 118 62 84 54 52" fill="none" stroke="url(#metal)" stroke-width="3.2" stroke-linecap="round"/>
+  <path d="M74 338 C70 284 68 224 64 160" fill="none" stroke="rgba(255,246,226,.42)" stroke-width=".8" stroke-linecap="round"/>
+
+  <!-- cloud / flower head -->
+  <path d="M54 52 C40 48 28 36 31 23 C33 12 45 8 53 15 C53 4 67 1 75 10 C84 3 97 8 96 21 C106 21 111 33 103 41 C96 50 82 50 75 43 C68 51 60 55 54 52 Z" fill="none" stroke="url(#gold)" stroke-width="2.1" stroke-linejoin="round"/>
+  <path d="M52 33 C46 29 41 28 36 31 M63 22 C62 15 64 10 69 7 M83 17 C88 12 92 12 96 14 M94 34 C100 35 103 39 104 44" fill="none" stroke="rgba(242,228,202,.55)" stroke-width="1"/>
+
+  <!-- bead -->
+  <ellipse cx="75" cy="52" rx="7.2" ry="8.4" fill="url(#bean)"/>
+  <ellipse cx="72.6" cy="49" rx="2" ry="2.4" fill="rgba(255,231,214,.55)"/>
+
+  <!-- dangling tassel -->
+  <path d="M88 54 C95 70 99 86 96 104" fill="none" stroke="url(#gold)" stroke-width="1.2"/>
+  <path d="M96 104 L91 124 M96 104 L97 126 M96 104 L102 123" stroke="#a23a33" stroke-width="2.4" stroke-linecap="round"/>
+  <circle cx="96" cy="104" r="2.4" fill="#d9b47c"/>
+
+  <!-- small blossoms along pin -->
+  <g opacity=".85">
+    <path d="M58 196 C52 190 51 182 57 178 C63 175 69 181 67 187 C65 192 61 196 58 196 Z" fill="none" stroke="rgba(231,199,142,.55)" stroke-width="1"/>
+    <circle cx="59" cy="187" r="1.5" fill="#a23a33"/>
+  </g>
+</svg>

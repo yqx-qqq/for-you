@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#0c0806">
+  <meta name="description" content="记忆电台 FM 03.0——一起，以及购物车、小家、糖醋排骨，和很多很多以后。">
+  <title>一起 · 记忆电台</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/caveat-600.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="together.css">
+  <link rel="stylesheet" href="radio.css">
+  <script>document.documentElement.classList.add("js");</script>
+</head>
+<body class="together radio deck-mode">
+  <div class="paper-stains" aria-hidden="true">
+    <i class="stain stain--a"></i>
+    <i class="stain stain--b"></i>
+    <i class="stain stain--c"></i>
+  </div>
+  <div class="grain" aria-hidden="true"></div>
+
+  <header class="together-top radio-top">
+    <a class="top-back top-back--paper" href="index.html">← 回到句子</a>
+    <div class="radio-top-center">
+      <span class="radio-onair"><i aria-hidden="true"></i>ON AIR</span>
+      <span class="top-chapter">MEMORY RADIO</span>
+      <span class="top-freq" id="freqReadout">FM 03.0</span>
+    </div>
+    <button class="top-sound" id="soundBtn" type="button" aria-label="播放背景音乐" aria-pressed="false">
+      <span class="sound-bars" aria-hidden="true"><i></i><i></i><i></i></span>
+    </button>
+  </header>
+
+  <main class="deck" id="deck" aria-label="记忆电台：一起，自动放映">
+    <section class="slide slide--hero is-active" data-duration="8000" data-freq="03.0" aria-label="节目封面">
+      <div class="slide-inner slide-inner--radio">
+        <div class="radio-tuner slide-tuner" aria-hidden="true">
+          <div class="radio-dial">
+            <div class="dial-ticks"></div>
+            <div class="dial-needle" id="dialNeedle"></div>
+            <div class="dial-cap">
+              <span>FM</span>
+              <strong>03.0</strong>
+              <small>MEMORY RADIO</small>
+            </div>
+          </div>
+          <div class="radio-scale"><span>03</span><i></i><span>04</span><i></i><span>05</span></div>
+        </div>
+
+        <div class="radio-hero-copy slide-hero-copy">
+          <p class="t-eyebrow">MEMORY RADIO · 记忆电台</p>
+          <h1 class="t-hero-cn">一起</h1>
+          <p class="t-hero-en">Together</p>
+          <p class="t-hero-sub">和你一起，把普通的日子过成纪念日。</p>
+          <p class="t-hero-note">这一章没有大事，只有我们认真过过的普通日子。</p>
+          <div class="t-hero-actions">
+            <button class="t-start" id="startBtn" type="button">
+              <span>打开收音机</span>
+              <span class="t-start-icon" aria-hidden="true">♫</span>
+            </button>
+            <span class="t-hero-count">FM 03.0 · AUTO PLAY · 2024—2026</span>
+          </div>
+          <p class="radio-now"><span>NOW PLAYING</span> 有点甜 · 汪苏泷 / BY2</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-duration="9000" data-freq="03.1" aria-label="购物车">
+      <div class="slide-inner">
+        <div class="slide-visual">
+          <div class="slide-frame">
+            <div class="slide-video-wrap">
+              <video class="slide-media slide-video" poster="assets/together/cart-patch.jpg" muted loop playsinline preload="metadata" aria-label="购物车手账页的动图">
+                <source src="assets/together/cart-reveal.mp4" type="video/mp4">
+              </video>
+              <span class="t-live-badge"><i aria-hidden="true"></i>LIVE</span>
+            </div>
+          </div>
+        </div>
+        <div class="slide-copy">
+          <p class="slide-kicker">01 · THE CART</p>
+          <h2>Little Escape</h2>
+          <p>她每次逛超市，都想坐进购物车。这一次，我陪她任性了一把。</p>
+          <p class="t-hand">She always wanted a cart ride. This time, I said yes.</p>
+          <a class="plain-link" href="assets/together/cart-live.pvt.zip" download>保存这张 Live Photo →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-duration="8000" data-freq="03.2" aria-label="海豚">
+      <div class="slide-inner">
+        <div class="slide-visual">
+          <div class="slide-frame slide-frame--polaroid">
+            <div class="slide-video-wrap">
+              <video class="slide-media slide-video" poster="assets/together/dolphin-patch.jpg" muted loop playsinline preload="metadata" aria-label="Soft Day 手账页的动图">
+                <source src="assets/together/dolphin-reveal.mp4" type="video/mp4">
+              </video>
+              <span class="t-live-badge"><i aria-hidden="true"></i>LIVE</span>
+            </div>
+            <figcaption class="slide-frame-caption">“像不像我？”</figcaption>
+          </div>
+        </div>
+        <div class="slide-copy">
+          <p class="slide-kicker">02 · SOFT DAY</p>
+          <h2>她的新朋友</h2>
+          <p>沃尔玛的玩偶区一只超萌的海豚，不过好像还有更可爱的！</p>
+          <p class="t-hand">She asked if it looked like her. It didn't come home with us.</p>
+          <a class="plain-link" href="assets/together/dolphin-live.pvt.zip" download>保存这张 Live Photo →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-duration="8000" data-freq="03.3" aria-label="小家一">
+      <div class="slide-inner">
+        <div class="slide-copy">
+          <p class="slide-kicker">03 · 一起的小家 1/2</p>
+          <h2>两把牙刷，一碗葡萄。</h2>
+          <p>家不是一间房子，是这些很小很小的事。</p>
+        </div>
+        <div class="slide-visual">
+          <div class="pair-grid">
+            <figure class="pair-card">
+              <img src="assets/together/home-toothbrush.jpg" width="1200" height="1600" alt="两把电动牙刷竖着拿在手里，刷头套着小熊和小鸡的透明保护壳，牙刷头朝上" loading="lazy" decoding="async">
+              <figcaption><strong>两把牙刷</strong>并排站好。</figcaption>
+            </figure>
+            <figure class="pair-card">
+              <img src="assets/together/home-grapes.jpg" width="1200" height="1600" alt="一只手捏着一颗剥好的青提，桌上有水果和零食" loading="lazy" decoding="async">
+              <figcaption><strong>一碗葡萄</strong>超级甜的巨峰葡萄</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-duration="8000" data-freq="03.4" aria-label="小家二">
+      <div class="slide-inner">
+        <div class="slide-copy">
+          <p class="slide-kicker">04 · 一起的小家 2/2</p>
+          <h2>一桶泡面，一碗草莓。</h2>
+          <p>Home is wherever you are.</p>
+        </div>
+        <div class="slide-visual">
+          <div class="pair-grid">
+            <figure class="pair-card">
+              <img src="assets/together/home-noodles.jpg" width="1400" height="1050" alt="一桶 Hello Kitty 包装的泡面，背景是床、笔记本电脑和一份外卖" loading="lazy" decoding="async">
+              <figcaption><strong>一桶泡面</strong>短暂的小家</figcaption>
+            </figure>
+            <figure class="pair-card">
+              <img src="assets/together/home-strawberries.jpg" width="1400" height="1050" alt="一只手托着几颗洗好的草莓，背景是家里的床单" loading="lazy" decoding="async">
+              <figcaption><strong>一碗草莓</strong>巨、巨、巨大草莓！</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-duration="9000" data-freq="03.5" aria-label="一起品尝美味">
+      <div class="slide-inner slide-inner--food">
+        <div class="slide-copy slide-copy--food">
+          <p class="slide-kicker">05 · 一起品尝美味</p>
+          <h2>把好吃的，都分你一半</h2>
+          <p class="t-hand">Good food tastes better with you.</p>
+        </div>
+        <div class="food-strip">
+          <figure class="food-card">
+            <img src="assets/together/food-skewers.jpg" width="1400" height="1050" alt="烤盘上的肉串、烤鱼、烤年糕和烤豆腐，撒着葱花和辣椒" loading="lazy" decoding="async">
+            <figcaption>去过无数次的宝藏小店</figcaption>
+          </figure>
+          <figure class="food-card">
+            <img src="assets/together/food-burger.jpg" width="1400" height="1050" alt="木盘上的汉堡、薯条和黄色蘸酱，旁边有一杯波点饮料" loading="lazy" decoding="async">
+            <figcaption>薯条小山，big大汉堡</figcaption>
+          </figure>
+          <figure class="food-card">
+            <img src="assets/together/food-ice.jpg" width="1400" height="1050" alt="一碗芒果青提刨冰，上面有一大球冰淇淋和椰片" loading="lazy" decoding="async">
+            <figcaption>麦记牛奶公司杰出作品</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-duration="9000" data-freq="03.6" aria-label="糖醋排骨">
+      <div class="slide-inner">
+        <div class="slide-visual">
+          <div class="ribs-frame">
+            <img src="assets/together/ribs.jpg" width="1400" height="1480" alt="一只粉边花碗里盛着糖醋排骨，撒着桂花" loading="lazy" decoding="async">
+          </div>
+        </div>
+        <div class="slide-copy">
+          <p class="slide-kicker">06 · THE RECIPE</p>
+          <h2>要做一辈子的<br>糖醋排骨</h2>
+          <p>要烹饪最好吃😋的糖醋排骨</p>
+          <p>我记住了。</p>
+          <p class="t-hand">A lifetime of sweet and sour.</p>
+          <span class="t-recipe-tag">家常菜 · 我们的以后</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-duration="9000" data-freq="03.7" aria-label="一直守着你">
+      <div class="slide-inner">
+        <div class="slide-copy">
+          <p class="slide-kicker">07 · 一直守着你</p>
+          <h2>今晚月色真美</h2>
+          <p>给宝宝的小脚洗香香</p>
+          <p class="t-hand">I’ll keep watch, always.</p>
+        </div>
+        <div class="slide-visual">
+          <div class="pair-grid">
+            <figure class="pair-card">
+              <img src="assets/together/guard-sleep.jpg" width="1170" height="878" alt="她裹着云朵图案的被子睡着了，脸埋在枕头里" loading="lazy" decoding="async">
+              <figcaption>睡着的时候是最最最可爱</figcaption>
+            </figure>
+            <figure class="pair-card">
+              <img src="assets/together/guard-medicine.jpg" width="1200" height="1600" alt="两只手正在给宝宝的小脚做护理，手腕上戴着彩色串珠" loading="lazy" decoding="async">
+              <figcaption>笨蛋宝子，伸出jiojio等我</figcaption>
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide slide--outro" data-duration="0" data-freq="03.8" aria-label="晚安曲">
+      <div class="slide-inner">
+        <p class="slide-kicker">THE LAST PAGE</p>
+        <p class="deck-quote">就这样，一直一起。</p>
+        <p class="deck-sub">Together, for the long run.</p>
+        <div class="final-photo-small">
+          <img src="assets/together/hands.jpg" width="1350" height="1800" alt="黑暗里，两只牵在一起的手" loading="lazy" decoding="async">
+        </div>
+        <a class="back" href="index.html">← 回到句子</a>
+        <p class="signature">for you, always.</p>
+        <p class="radio-signoff">PROGRAM ENDS · 晚安</p>
+      </div>
+    </section>
+  </main>
+
+  <div class="deck-ui" id="deckUI">
+    <div class="deck-progress" aria-hidden="true"><span id="deckProgress"></span></div>
+    <div class="deck-controls">
+      <button id="deckPrev" type="button" aria-label="上一页">←</button>
+      <button id="deckPlay" type="button" aria-label="暂停自动放映"><span id="deckPlayIcon">Ⅱ</span></button>
+      <button id="deckNext" type="button" aria-label="下一页">→</button>
+    </div>
+    <div class="deck-dots" id="deckDots" aria-hidden="true"></div>
+    <p class="deck-status" id="deckStatus">AUTO · 自动放映</p>
+  </div>
+
+  <div class="t-player radio-console" id="player">
+    <div class="console-onair">
+      <span class="on-air-dot" aria-hidden="true"></span>
+      <span>ON AIR</span>
+    </div>
+    <button id="playBtn" type="button" aria-label="播放或暂停背景音乐">
+      <span class="play-icon" aria-hidden="true"></span>
+    </button>
+    <div class="console-track">
+      <span class="console-kicker">NOW PLAYING</span>
+      <span class="t-player-title">有点甜</span>
+      <span class="t-player-artist">汪苏泷 / BY2</span>
+    </div>
+    <div class="radio-vu" aria-hidden="true">
+      <i></i><i></i><i></i><i></i><i></i><i></i>
+      <i></i><i></i><i></i><i></i><i></i><i></i>
+    </div>
+    <div class="console-tuner">
+      <span class="console-freq" id="consoleFreq">FM 03.0</span>
+      <div class="t-player-bar" aria-hidden="true"><span id="progress"></span></div>
+      <span class="t-player-time" id="time">0:00</span>
+    </div>
+  </div>
+  <audio id="bgm" src="assets/audio/you-dian-tian.mp3" loop preload="metadata"></audio>
+
+  <script src="together.js"></script>
+  <script src="radio.js"></script>
+</body>
+</html>

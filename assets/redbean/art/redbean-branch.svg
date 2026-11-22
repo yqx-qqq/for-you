@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 760" fill="none">
+  <g stroke="#3c342b" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M52 742C108 632 128 530 214 438C300 346 338 226 438 96"/>
+    <path d="M150 560C214 540 270 512 316 468"/>
+    <path d="M210 452C176 392 158 322 170 250"/>
+    <path d="M270 356C318 342 360 314 396 272"/>
+    <path d="M330 250C360 220 392 198 432 188"/>
+    <path d="M165 392C132 370 108 336 96 296"/>
+    <path d="M240 408C230 368 232 330 242 296"/>
+    <path d="M372 230C388 196 410 172 438 158"/>
+    <path d="M430 120C450 102 468 90 490 82"/>
+  </g>
+  <g fill="#7b8263" opacity=".55">
+    <path d="M196 454C170 438 150 414 142 388C168 390 192 410 204 436Z"/>
+    <path d="M314 352C338 348 362 330 376 306C350 304 326 320 314 344Z"/>
+    <path d="M226 300C204 282 190 258 188 234C212 240 230 260 236 284Z"/>
+    <path d="M388 250C412 244 436 226 448 202C422 202 398 220 388 244Z"/>
+    <path d="M162 254C142 236 132 212 134 188C156 196 170 216 174 238Z"/>
+    <path d="M444 152C462 140 482 136 500 140C488 158 468 168 448 166Z"/>
+  </g>
+  <g fill="#a23a33" stroke="#6e241f" stroke-width="1.1">
+    <ellipse cx="200" cy="470" rx="15" ry="11" transform="rotate(-28 200 470)"/>
+    <ellipse cx="238" cy="430" rx="13" ry="10" transform="rotate(18 238 430)"/>
+    <ellipse cx="270" cy="352" rx="14" ry="10" transform="rotate(-12 270 352)"/>
+    <ellipse cx="332" cy="286" rx="12" ry="9" transform="rotate(24 332 286)"/>
+    <ellipse cx="382" cy="238" rx="13" ry="10" transform="rotate(-18 382 238)"/>
+    <ellipse cx="430" cy="150" rx="12" ry="9" transform="rotate(12 430 150)"/>
+    <ellipse cx="178" cy="392" rx="11" ry="8" transform="rotate(20 178 392)"/>
+    <ellipse cx="152" cy="550" rx="10" ry="8" transform="rotate(-16 152 550)"/>
+  </g>
+  <g fill="#c9655b" opacity=".5">
+    <ellipse cx="196" cy="466" rx="4.5" ry="3" transform="rotate(-28 196 466)"/>
+    <ellipse cx="266" cy="349" rx="4" ry="2.8" transform="rotate(-12 266 349)"/>
+    <ellipse cx="378" cy="235" rx="4" ry="2.8" transform="rotate(-18 378 235)"/>
+  </g>
+</svg>
